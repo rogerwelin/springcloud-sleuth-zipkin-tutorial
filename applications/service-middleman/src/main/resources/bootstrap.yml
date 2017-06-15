@@ -1,0 +1,3 @@
+spring.application.name: 'service-middleman'
+server.port: 8000
+spring.sleuth.sampler.percentage: 1.0

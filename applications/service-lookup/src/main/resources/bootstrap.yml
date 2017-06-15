@@ -1,0 +1,3 @@
+spring.application.name: 'service-lookup'
+server.port: 7000
+spring.sleuth.sampler.percentage: 1.0

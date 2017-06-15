@@ -1,0 +1,11 @@
+mainClassName = "se.codemonkey.App"
+group = 'se.codemonkey'
+
+jar {
+  manifest {
+    attributes(
+      'Main-Class': 'se.codemonkey.App'
+    )
+  }
+}
+
