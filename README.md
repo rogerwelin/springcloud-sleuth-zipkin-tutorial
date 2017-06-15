@@ -1,6 +1,5 @@
 # Tracing with zipkin and spring-cloud-sleuth
 
-example how to do distributed tracing in a microservice environment Edit
 
 ## Intro
 This is a tutorial repo regarding examplify how distributed tracing can be accomplished using zipkin and a java springboot application using the springcloud-sleuth.
