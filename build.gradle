@@ -41,7 +41,7 @@ subprojects {
 
 task dockerzipkin(type: Exec) {
   executable "bash"
-  args "-c", "docker run -d -p 9411:9411 openzipkin/zipkin"
+  args "-c", "docker run -d -p 9411:9411 openzipkin/zipkin:1.26"
   doLast {
     println "-----> Successfully set up zipkin container - visit http://localhost:9411 in your browser <-----"
   }
