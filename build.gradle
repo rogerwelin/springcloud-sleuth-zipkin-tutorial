@@ -47,5 +47,10 @@ task dockerzipkin(type: Exec) {
   }
 }
 
-task runJars() {
+task printJars() {
+  def jars = ['applications/service-lookup/build/libs/applications/service-lookup.jar', 'applications/service-quote/build/libs/applications/service-quote.jar', 'applications/service-middleman/build/libs/applications/service-middleman.jar']
+
+  jars.each { jar ->
+    println "nohup java -jar ${jar} &"
+  }
 }
