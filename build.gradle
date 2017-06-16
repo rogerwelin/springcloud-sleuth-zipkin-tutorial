@@ -43,14 +43,24 @@ task dockerzipkin(type: Exec) {
   executable "bash"
   args "-c", "docker run -d -p 9411:9411 openzipkin/zipkin"
   doLast {
-    println "-----> Successfully set up zipkin container on localhost:9411 <-----"
+    println "-----> Successfully set up zipkin container - visit http://localhost:9411 in your browser <-----"
+  }
+}
+
+task stopzipkin(type: Exec) {
+  executable "bash"
+  args "-c", "docker rm \$(docker stop \$(docker ps -a -q --filter ancestor=openzipkin/zipkin --format='{{.ID}}'))"
+  doLast {
+    println "-----> Successfully stopped and removed all zipkin containers <-----"
   }
 }
 
 task printJars() {
   def jars = ['applications/service-lookup/build/libs/applications/service-lookup.jar', 'applications/service-quote/build/libs/applications/service-quote.jar', 'applications/service-middleman/build/libs/applications/service-middleman.jar']
 
-  jars.each { jar ->
-    println "nohup java -jar ${jar} &"
+  doLast {
+    jars.each { jar ->
+      println "nohup java -jar ${jar} &"
+    }
   }
 }
