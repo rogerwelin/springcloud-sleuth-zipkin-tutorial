@@ -49,7 +49,7 @@ task dockerzipkin(type: Exec) {
 
 task stopzipkin(type: Exec) {
   executable "bash"
-  args "-c", "docker rm \$(docker stop \$(docker ps -a -q --filter ancestor=openzipkin/zipkin --format='{{.ID}}'))"
+  args "-c", "docker rm \$(docker stop \$(docker ps -a -q --filter ancestor=openzipkin/zipkin:1.26 --format='{{.ID}}'))"
   doLast {
     println "-----> Successfully stopped and removed all zipkin containers <-----"
   }
