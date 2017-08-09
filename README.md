@@ -24,4 +24,5 @@ service-lookup -> service-middleman -> service-quote -> remote rest endpoint (ak
 * Make a get request to trigger communication chain: **curl -XGET localhost:7000/lookup**
 * View results in Zipkin in the browser: http://localhost:9411
 
-
+## More info
+I also wrote a [blog post](https://rogerwelin.github.io/zipkin/java/tracing/2017/08/06/distributed-tracing-with-zipkin.html) about this that does more in-depth
